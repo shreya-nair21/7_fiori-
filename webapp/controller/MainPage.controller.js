@@ -7,11 +7,15 @@ sap.ui.define([
         onInit() {
         },
 
-        onRowClick: function(oEvent) {
-            var oTable = oEvent.getSource();
-            // var oSelectedItem = oTable.getSelectedItem();
-            console.log(oEvent.getParameters("rowContext"));
-            
-        }
+        onRowClick: function(oEvent){
+    console.log("Row clicked");
+
+    var employeeID = oEvent.getParameter("rowContext").getObject().EmployeeID;
+    console.log(employeeID);
+
+    this.getOwnerComponent().getRouter().navTo("RouteDetailPage", {
+        EmployeeID: employeeID
+    });
+}
     });
 });

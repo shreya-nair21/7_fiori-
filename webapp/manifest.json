@@ -112,8 +112,8 @@
         },
 
         {
-          "name": "RouteDetailPage",
-          "pattern": ":?query:",
+           "name": "RouteDetailPage",
+          "pattern": "detailpage/{EmployeeID}",
           "target": [
             "TargetDetailPage"
           ]

@@ -19,6 +19,14 @@
                 enableBasicSearch="true"
             >
                 <smartFilterBar:controlConfiguration>
+
+                     <smartFilterBar:ControlConfiguration
+                        id="_IDGenControlConfiguration"
+                        key="EmployeeID"
+                    />
+
+                 
+
                     <smartFilterBar:ControlConfiguration
                         id="_IDGenControlConfiguration1"
                         key="FirstName"
@@ -71,7 +79,7 @@
                 enableAutoBinding="true"
                 class="sapUiResponsiveContentPadding"
                 enableAutoColumnWidth="true"
-                initiallyVisibleFields="LastName,FirstName,Title,BirthDate,Country,City"
+                initiallyVisibleFields="EmployeeID,LastName,FirstName,Title,BirthDate,Country,City"
             >
                 <table:Table
                     id="uiTable"
