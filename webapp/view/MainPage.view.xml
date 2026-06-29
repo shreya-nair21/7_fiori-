@@ -1,0 +1,84 @@
+<mvc:View
+    controllerName="com.zlrop.zlrop.controller.MainPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:table="sap.ui.table"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <smartFilterBar:SmartFilterBar
+                id="smartFilterBar"
+                entitySet="Employees"
+                persistencyKey="SmartFilter_Explored"
+                basicSearchFieldName="LastName"
+                enableBasicSearch="true"
+            >
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration
+                        id="_IDGenControlConfiguration1"
+                        key="FirstName"
+                    />
+
+                    <smartFilterBar:ControlConfiguration
+                        id="_IDGenControlConfiguration2"
+                        key="LastName"
+                    />
+
+                    <smartFilterBar:ControlConfiguration
+                        id="_IDGenControlConfiguration3"
+                        key="Title"
+                    />
+
+                    <smartFilterBar:ControlConfiguration
+                        id="_IDGenControlConfiguration4"
+                        key="BirthDate"
+                    />
+
+                    <smartFilterBar:ControlConfiguration
+                        id="_IDGenControlConfiguration5"
+                        key="Country"
+                    />
+
+                    <smartFilterBar:ControlConfiguration
+                        id="_IDGenControlConfiguration6"
+                        key="City"
+                    />
+                </smartFilterBar:controlConfiguration>
+
+                <smartFilterBar:layoutData>
+                    <FlexItemData
+                        id="_IDGenFlexItemData"
+                        shrinkFactor="0"
+                    />
+                </smartFilterBar:layoutData>
+            </smartFilterBar:SmartFilterBar>
+            <smartTable:SmartTable
+                id="LineItemsSmartTable"
+                entitySet="Employees"
+                smartFilterId="smartFilterBar"
+                tableType="Table"
+                enableExport="true"
+                useVariantManagement="true"
+                useTablePersonalisation="true"
+                header="Line Items"
+                showRowCount="true"
+                persistencyKey="SmartTableAnalytical_Explored"
+                enableAutoBinding="true"
+                class="sapUiResponsiveContentPadding"
+                enableAutoColumnWidth="true"
+                initiallyVisibleFields="LastName,FirstName,Title,BirthDate,Country,City"
+            >
+                <table:Table
+                    id="uiTable"
+                    selectionBehavior="RowOnly"
+                    rowSelectionChange="onRowClick"
+                />
+            </smartTable:SmartTable>
+        </content>
+    </Page>
+</mvc:View>
